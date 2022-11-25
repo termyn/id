@@ -10,25 +10,16 @@ use Termyn\Identifier\Uuid\Ramsey\RamseyUuid;
 
 final class RamseyUuidTest extends TestCase
 {
+    public function testItCreatesValidRandomUuid(): void
+    {
+        $uuid = RamseyUuid::random();
+
+        $this->assertInstanceOf(RamseyUuid::class, $uuid);
+    }
+
     public function testItCreatesValidUuidFromString(): void
     {
         $uuid = RamseyUuid::fromString(FakeUuid::PRIMARY);
-
-        $this->assertSame(FakeUuid::PRIMARY, $uuid->toString());
-    }
-
-    public function testItReturnsValidString(): void
-    {
-        $uuid = RamseyUuid::fromString(FakeUuid::PRIMARY);
-
-        $this->assertSame(FakeUuid::PRIMARY, $uuid->toString());
-        $this->assertSame(FakeUuid::PRIMARY, $uuid->__toString());
-    }
-
-    public function testItCreatesValidUuidFromBinary(): void
-    {
-        $uuid = RamseyUuid::fromString(FakeUuid::PRIMARY);
-        $uuid = RamseyUuid::fromBinary($uuid->toBinary());
 
         $this->assertSame(FakeUuid::PRIMARY, $uuid->toString());
     }
@@ -50,5 +41,30 @@ final class RamseyUuidTest extends TestCase
         $this->assertFalse(
             $firstUuid->equals($secondUuid)
         );
+    }
+
+    public function testItDerivesUuidBasedOnAnother(): void
+    {
+        $uuid = RamseyUuid::fromString(FakeUuid::PRIMARY);
+
+        $derivedUuid = $uuid->derive(FakeUuid::SECONDARY);
+
+        $this->assertSame(FakeUuid::DERIVED, $derivedUuid->toString());
+    }
+
+    public function testItReturnsValidString(): void
+    {
+        $uuid = RamseyUuid::fromString(FakeUuid::PRIMARY);
+
+        $this->assertSame(FakeUuid::PRIMARY, $uuid->toString());
+        $this->assertSame(FakeUuid::PRIMARY, $uuid->__toString());
+    }
+
+    public function testItCreatesValidUuidFromBinary(): void
+    {
+        $uuid = RamseyUuid::fromString(FakeUuid::PRIMARY);
+        $uuid = RamseyUuid::fromBinary($uuid->toBinary());
+
+        $this->assertSame(FakeUuid::PRIMARY, $uuid->toString());
     }
 }

@@ -15,6 +15,11 @@ final class SymfonyUuid extends Uuid implements Id
     ) {
     }
 
+    public static function random(): Uuid
+    {
+        return new self(VendorUuid::v4());
+    }
+
     public static function fromString(string $uuid): self
     {
         return new self(
@@ -26,6 +31,13 @@ final class SymfonyUuid extends Uuid implements Id
     {
         return new self(
             VendorUuid::fromBinary($uuid)
+        );
+    }
+
+    public function derive(string $name): Uuid
+    {
+        return new self(
+            VendorUuid::v5($this->uuid, $name)
         );
     }
 
