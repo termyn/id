@@ -13,6 +13,8 @@ abstract class Uuid implements Id
         return $this->toString();
     }
 
+    abstract public static function random(): self;
+
     abstract public static function fromString(string $uuid): self;
 
     abstract public static function fromBinary(string $uuid): self;
@@ -21,6 +23,8 @@ abstract class Uuid implements Id
     {
         return strcmp((string) $this, (string) $that) === 0;
     }
+
+    abstract public function derive(string $name): self;
 
     abstract public function toString(): string;
 
