@@ -1,0 +1,36 @@
+{
+  "name": "termyn/identifier",
+  "description": "",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Edo Barnas",
+      "email": "iam@edobarnas.com"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Termyn\\Identifier\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Termyn\\Identifier\\Test\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "ramsey/uuid": "^4.6",
+    "symfony/uid": "^6.1"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "1.9.*",
+    "phpstan/phpstan-phpunit": "1.2.*",
+    "phpunit/phpunit": "9.5.*",
+    "symplify/easy-coding-standard": "11.1.*"
+  }
+}
