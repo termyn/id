@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Termyn\Identifier;
 
-abstract class Uuid implements Id
+abstract class Uuid implements Id, Gid, Lid
 {
     public const NIL = '00000000-0000-0000-0000-000000000000';
 
@@ -24,7 +24,12 @@ abstract class Uuid implements Id
         return strcmp((string) $this, (string) $that) === 0;
     }
 
-    abstract public function derive(string $name): self;
+    public function associate(int|string $order): Lid
+    {
+        return $this->toNameBased((string) $order);
+    }
+
+    abstract public function toNameBased(string $name): self;
 
     abstract public function toString(): string;
 

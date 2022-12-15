@@ -43,13 +43,13 @@ final class SymfonyUuidTest extends TestCase
         );
     }
 
-    public function testItDerivesUuidBasedOnAnother(): void
+    public function testItReturnsNameBasedUuid(): void
     {
         $uuid = SymfonyUuid::fromString(FakeUuid::PRIMARY);
 
-        $derivedUuid = $uuid->derive(FakeUuid::SECONDARY);
+        $derivedUuid = $uuid->toNameBased(FakeUuid::SECONDARY);
 
-        $this->assertSame(FakeUuid::DERIVED, $derivedUuid->toString());
+        $this->assertSame(FakeUuid::NAME_BASED, $derivedUuid->toString());
     }
 
     public function testItReturnsValidString(): void

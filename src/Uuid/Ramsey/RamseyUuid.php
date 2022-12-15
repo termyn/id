@@ -36,7 +36,7 @@ final class RamseyUuid extends Uuid implements Id
         );
     }
 
-    public function derive(string $name): Uuid
+    public function toNameBased(string $name): Uuid
     {
         return new self(
             VendorUuid::uuid5($this->uuid, $name)

@@ -34,7 +34,7 @@ final class SymfonyUuid extends Uuid implements Id
         );
     }
 
-    public function derive(string $name): Uuid
+    public function toNameBased(string $name): Uuid
     {
         return new self(
             VendorUuid::v5($this->uuid, $name)
