@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Identifier\Uuid\Ramsey;
+namespace Termyn\Uuid\Ramsey;
 
 use Ramsey\Uuid\Uuid as VendorUuid;
 use Ramsey\Uuid\UuidInterface as VendorUuidInterface;
-use Termyn\Identifier\Id;
-use Termyn\Identifier\Uuid;
+use Termyn\Id;
+use Termyn\Uuid;
 
 final class RamseyUuid extends Uuid implements Id
 {

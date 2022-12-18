@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Identifier\Test\Uuid\Ramsey;
+namespace Termyn\Test\Uuid\Ramsey;
 
 use PHPUnit\Framework\TestCase;
-use Termyn\Identifier\Test\Uuid\FakeUuid;
-use Termyn\Identifier\Uuid\Ramsey\RamseyNamedUuidFactory;
-use Termyn\Identifier\Uuid\Ramsey\RamseyUuid;
+use Termyn\Test\Uuid\FakeUuid;
+use Termyn\Uuid\Ramsey\RamseyNamedUuidFactory;
+use Termyn\Uuid\Ramsey\RamseyUuid;
 
 final class RamseyNamedUuidFactoryTest extends TestCase
 {

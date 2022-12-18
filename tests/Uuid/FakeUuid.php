@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Identifier\Test\Uuid;
+namespace Termyn\Test\Uuid;
 
 interface FakeUuid
 {

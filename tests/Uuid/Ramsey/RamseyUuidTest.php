@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Termyn\Id\Tests\Uuid\Ramsey;
 
 use PHPUnit\Framework\TestCase;
-use Termyn\Identifier\Test\Uuid\FakeUuid;
-use Termyn\Identifier\Uuid\Ramsey\RamseyUuid;
+use Termyn\Test\Uuid\FakeUuid;
+use Termyn\Uuid\Ramsey\RamseyUuid;
 
 final class RamseyUuidTest extends TestCase
 {

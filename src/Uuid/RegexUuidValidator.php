@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Identifier\Uuid;
+namespace Termyn\Uuid;
 
-use Termyn\Identifier\Uuid;
+use Termyn\Uuid;
 
 final class RegexUuidValidator implements UuidValidator
 {

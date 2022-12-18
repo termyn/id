@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Identifier\Uuid\Symfony;
+namespace Termyn\Uuid\Symfony;
 
 use Symfony\Component\Uid\Uuid as VendorUuid;
-use Termyn\Identifier\Uuid;
-use Termyn\Identifier\Uuid\NamedUuidFactory;
+use Termyn\Uuid;
+use Termyn\Uuid\NamedUuidFactory;
 
 final class SymfonyNamedUuidFactory implements NamedUuidFactory
 {

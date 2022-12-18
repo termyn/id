@@ -1,5 +1,5 @@
 {
-  "name": "termyn/identifier",
+  "name": "termyn/id",
   "description": "",
   "type": "library",
   "license": "MIT",
@@ -14,16 +14,16 @@
   },
   "autoload": {
     "psr-4": {
-      "Termyn\\Identifier\\": "src/"
+      "Termyn\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Termyn\\Identifier\\Test\\": "tests/"
+      "Termyn\\Test\\": "tests/"
     }
   },
   "require": {
-    "php": "^8.1",
+    "php": "^8.2",
     "ramsey/uuid": "^4.6",
     "symfony/uid": "^6.1"
   },

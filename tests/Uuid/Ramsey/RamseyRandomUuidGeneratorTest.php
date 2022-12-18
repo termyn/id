@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Termyn\Id\Tests\Uuid\Symfony;
 
 use PHPUnit\Framework\TestCase;
-use Termyn\Identifier\Uuid\Ramsey\RamseyRandomUuidGenerator;
-use Termyn\Identifier\Uuid\Ramsey\RamseyUuid;
+use Termyn\Uuid\Ramsey\RamseyRandomUuidGenerator;
+use Termyn\Uuid\Ramsey\RamseyUuid;
 
 final class RamseyRandomUuidGeneratorTest extends TestCase
 {

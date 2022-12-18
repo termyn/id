@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Identifier\Test\Uuid;
+namespace Termyn\Test\Uuid;
 
 use PHPUnit\Framework\TestCase;
-use Termyn\Identifier\Uuid;
-use Termyn\Identifier\Uuid\RegexUuidValidator;
+use Termyn\Uuid;
+use Termyn\Uuid\RegexUuidValidator;
 
 final class RegexUuidValidatorTest extends TestCase
 {

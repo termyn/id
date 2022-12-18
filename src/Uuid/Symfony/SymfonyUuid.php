@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Identifier\Uuid\Symfony;
+namespace Termyn\Uuid\Symfony;
 
 use Symfony\Component\Uid\Uuid as VendorUuid;
-use Termyn\Identifier\Id;
-use Termyn\Identifier\Uuid;
+use Termyn\Id;
+use Termyn\Uuid;
 
 final class SymfonyUuid extends Uuid implements Id
 {

@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Termyn\Id\Tests\Uuid\Symfony;
 
 use PHPUnit\Framework\TestCase;
-use Termyn\Identifier\Test\Uuid\FakeUuid;
-use Termyn\Identifier\Uuid\Symfony\SymfonyNamedUuidFactory;
-use Termyn\Identifier\Uuid\Symfony\SymfonyUuid;
+use Termyn\Test\Uuid\FakeUuid;
+use Termyn\Uuid\Symfony\SymfonyNamedUuidFactory;
+use Termyn\Uuid\Symfony\SymfonyUuid;
 
 final class SymfonyNamedUuidFactoryTest extends TestCase
 {

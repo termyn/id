@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Identifier\Uuid\Symfony;
+namespace Termyn\Uuid\Symfony;
 
 use Symfony\Component\Uid\Uuid as VendorUuid;
-use Termyn\Identifier\Uuid;
-use Termyn\Identifier\Uuid\RandomUuidGenerator;
+use Termyn\Uuid;
+use Termyn\Uuid\RandomUuidGenerator;
 
 final class SymfonyRandomUuidGenerator implements RandomUuidGenerator
 {

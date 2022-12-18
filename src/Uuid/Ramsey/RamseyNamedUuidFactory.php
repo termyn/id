@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Identifier\Uuid\Ramsey;
+namespace Termyn\Uuid\Ramsey;
 
 use Ramsey\Uuid\Uuid as VendorUuid;
-use Termyn\Identifier\Uuid;
-use Termyn\Identifier\Uuid\NamedUuidFactory;
+use Termyn\Uuid;
+use Termyn\Uuid\NamedUuidFactory;
 
 final class RamseyNamedUuidFactory implements NamedUuidFactory
 {

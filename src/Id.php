@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Identifier;
+namespace Termyn;
 
 use Stringable;
 

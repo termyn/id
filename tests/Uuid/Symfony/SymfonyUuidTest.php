@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Identifier\Test\Uuid\Symfony;
+namespace Termyn\Test\Uuid\Symfony;
 
 use PHPUnit\Framework\TestCase;
-use Termyn\Identifier\Test\Uuid\FakeUuid;
-use Termyn\Identifier\Uuid\Symfony\SymfonyUuid;
+use Termyn\Test\Uuid\FakeUuid;
+use Termyn\Uuid\Symfony\SymfonyUuid;
 
 final class SymfonyUuidTest extends TestCase
 {

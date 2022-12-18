@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Identifier\Uuid;
+namespace Termyn\Uuid;
 
 interface UuidValidator
 {
