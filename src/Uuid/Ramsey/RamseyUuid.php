@@ -17,26 +17,26 @@ final class RamseyUuid extends Uuid implements Id
 
     }
 
-    public static function random(): Uuid
+    public static function random(): self
     {
         return new self(VendorUuid::uuid4());
     }
 
-    public static function fromString(string $uuid): Uuid
+    public static function fromString(string $uuid): self
     {
         return new self(
             VendorUuid::fromString($uuid)
         );
     }
 
-    public static function fromBinary(string $uuid): Uuid
+    public static function fromBinary(string $uuid): self
     {
         return new self(
             VendorUuid::fromBytes($uuid)
         );
     }
 
-    public function toNameBased(string $name): Uuid
+    public function toNameBased(string $name): self
     {
         return new self(
             VendorUuid::uuid5($this->uuid, $name)

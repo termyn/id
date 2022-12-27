@@ -15,7 +15,7 @@ final class SymfonyUuid extends Uuid implements Id
     ) {
     }
 
-    public static function random(): Uuid
+    public static function random(): self
     {
         return new self(VendorUuid::v4());
     }
@@ -27,14 +27,14 @@ final class SymfonyUuid extends Uuid implements Id
         );
     }
 
-    public static function fromBinary(string $uuid): Uuid
+    public static function fromBinary(string $uuid): self
     {
         return new self(
             VendorUuid::fromBinary($uuid)
         );
     }
 
-    public function toNameBased(string $name): Uuid
+    public function toNameBased(string $name): self
     {
         return new self(
             VendorUuid::v5($this->uuid, $name)
