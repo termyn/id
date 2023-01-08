@@ -6,7 +6,7 @@ namespace Termyn\Uuid;
 
 use Termyn\Uuid;
 
-interface NamedUuidFactory
+interface UuidFactory
 {
     public function create(Uuid $namespace, string $name): Uuid;
 }

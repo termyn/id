@@ -6,9 +6,9 @@ namespace Termyn\Uuid\Ramsey;
 
 use Ramsey\Uuid\Uuid as VendorUuid;
 use Termyn\Uuid;
-use Termyn\Uuid\RandomUuidGenerator;
+use Termyn\Uuid\UuidGenerator;
 
-final class RamseyRandomUuidGenerator implements RandomUuidGenerator
+final class RamseyRandomUuidGenerator implements UuidGenerator
 {
     public function generate(): Uuid
     {

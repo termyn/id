@@ -6,9 +6,9 @@ namespace Termyn\Uuid\Ramsey;
 
 use Ramsey\Uuid\Uuid as VendorUuid;
 use Termyn\Uuid;
-use Termyn\Uuid\NamedUuidFactory;
+use Termyn\Uuid\UuidFactory;
 
-final class RamseyNamedUuidFactory implements NamedUuidFactory
+final class RamseyNamedUuidFactory implements UuidFactory
 {
     public function create(Uuid $namespace, string $name): Uuid
     {

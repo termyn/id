@@ -6,7 +6,7 @@ namespace Termyn\Uuid;
 
 use Termyn\Uuid;
 
-interface RandomUuidGenerator
+interface UuidGenerator
 {
     public function generate(): Uuid;
 }

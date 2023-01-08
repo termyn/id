@@ -6,9 +6,9 @@ namespace Termyn\Uuid\Symfony;
 
 use Symfony\Component\Uid\Uuid as VendorUuid;
 use Termyn\Uuid;
-use Termyn\Uuid\RandomUuidGenerator;
+use Termyn\Uuid\UuidGenerator;
 
-final class SymfonyRandomUuidGenerator implements RandomUuidGenerator
+final class SymfonyRandomUuidGenerator implements UuidGenerator
 {
     public function generate(): Uuid
     {
