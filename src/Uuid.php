@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Termyn;
 
+use Stringable;
+
 abstract class Uuid implements Id
 {
     public const NIL = '00000000-0000-0000-0000-000000000000';
@@ -24,9 +26,9 @@ abstract class Uuid implements Id
         return strcmp((string) $this, (string) $that) === 0;
     }
 
-    public function next(int|string $order): Id
+    public function next(int|string|Stringable $secret): Id
     {
-        return $this->toNameBased((string) $order);
+        return $this->toNameBased((string) $secret);
     }
 
     abstract public function toNameBased(string $name): self;

@@ -10,5 +10,5 @@ interface Id extends Stringable
 {
     public function equals(self $that): bool;
 
-    public function next(int|string $order): self;
+    public function next(int|string|Stringable $secret): self;
 }
