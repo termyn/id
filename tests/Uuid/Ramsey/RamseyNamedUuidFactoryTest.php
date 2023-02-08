@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Termyn\Test\Uuid\Ramsey;
 
 use PHPUnit\Framework\TestCase;
-use Termyn\Test\Uuid\FakeUuid;
+use Termyn\Test\Uuid\FakeUuids;
 use Termyn\Uuid\Ramsey\RamseyNamedUuidFactory;
 use Termyn\Uuid\Ramsey\RamseyUuid;
 
@@ -16,7 +16,7 @@ final class RamseyNamedUuidFactoryTest extends TestCase
         $factory = new RamseyNamedUuidFactory();
 
         $uuid = $factory->create(
-            namespace: RamseyUuid::fromString(FakeUuid::PRIMARY),
+            namespace: RamseyUuid::fromString(FakeUuids::PRIMARY),
             name: '123',
         );
 

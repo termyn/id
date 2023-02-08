@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Termyn\Test\Uuid;
 
-interface FakeUuid
+interface FakeUuids
 {
     public const PRIMARY = '28a35d67-7739-4873-9248-dc97822e0bb2';
 

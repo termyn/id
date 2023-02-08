@@ -15,7 +15,7 @@ final class RegexUuidValidatorTest extends TestCase
         $validator = new RegexUuidValidator();
 
         $this->assertTrue(
-            $validator->validate(FakeUuid::PRIMARY)
+            $validator->validate(FakeUuids::PRIMARY)
         );
     }
 
@@ -33,7 +33,7 @@ final class RegexUuidValidatorTest extends TestCase
         $validator = new RegexUuidValidator();
 
         $this->assertFalse(
-            $validator->validate(FakeUuid::INVALID)
+            $validator->validate(FakeUuids::INVALID)
         );
     }
 }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Termyn\Id\Tests\Uuid\Ramsey;
 
 use PHPUnit\Framework\TestCase;
-use Termyn\Test\Uuid\FakeUuid;
+use Termyn\Test\Uuid\FakeUuids;
 use Termyn\Uuid\Ramsey\RamseyUuid;
 
 final class RamseyUuidTest extends TestCase
@@ -19,14 +19,14 @@ final class RamseyUuidTest extends TestCase
 
     public function testItCreatesValidUuidFromString(): void
     {
-        $uuid = RamseyUuid::fromString(FakeUuid::PRIMARY);
+        $uuid = RamseyUuid::fromString(FakeUuids::PRIMARY);
 
-        $this->assertSame(FakeUuid::PRIMARY, $uuid->toString());
+        $this->assertSame(FakeUuids::PRIMARY, $uuid->toString());
     }
 
     public function testItEqualsUuids(): void
     {
-        $firstUuid = RamseyUuid::fromString(FakeUuid::PRIMARY);
+        $firstUuid = RamseyUuid::fromString(FakeUuids::PRIMARY);
 
         $this->assertTrue(
             $firstUuid->equals($firstUuid)
@@ -35,8 +35,8 @@ final class RamseyUuidTest extends TestCase
 
     public function testItNotEqualsUuids(): void
     {
-        $firstUuid = RamseyUuid::fromString(FakeUuid::PRIMARY);
-        $secondUuid = RamseyUuid::fromString(FakeUuid::SECONDARY);
+        $firstUuid = RamseyUuid::fromString(FakeUuids::PRIMARY);
+        $secondUuid = RamseyUuid::fromString(FakeUuids::SECONDARY);
 
         $this->assertFalse(
             $firstUuid->equals($secondUuid)
@@ -45,26 +45,26 @@ final class RamseyUuidTest extends TestCase
 
     public function testItReturnsNameBasedUuid(): void
     {
-        $uuid = RamseyUuid::fromString(FakeUuid::PRIMARY);
+        $uuid = RamseyUuid::fromString(FakeUuids::PRIMARY);
 
-        $derivedUuid = $uuid->toNameBased(FakeUuid::SECONDARY);
+        $derivedUuid = $uuid->toNameBased(FakeUuids::SECONDARY);
 
-        $this->assertSame(FakeUuid::NAME_BASED, $derivedUuid->toString());
+        $this->assertSame(FakeUuids::NAME_BASED, $derivedUuid->toString());
     }
 
     public function testItReturnsValidString(): void
     {
-        $uuid = RamseyUuid::fromString(FakeUuid::PRIMARY);
+        $uuid = RamseyUuid::fromString(FakeUuids::PRIMARY);
 
-        $this->assertSame(FakeUuid::PRIMARY, $uuid->toString());
-        $this->assertSame(FakeUuid::PRIMARY, $uuid->__toString());
+        $this->assertSame(FakeUuids::PRIMARY, $uuid->toString());
+        $this->assertSame(FakeUuids::PRIMARY, $uuid->__toString());
     }
 
     public function testItCreatesValidUuidFromBinary(): void
     {
-        $uuid = RamseyUuid::fromString(FakeUuid::PRIMARY);
+        $uuid = RamseyUuid::fromString(FakeUuids::PRIMARY);
         $uuid = RamseyUuid::fromBinary($uuid->toBinary());
 
-        $this->assertSame(FakeUuid::PRIMARY, $uuid->toString());
+        $this->assertSame(FakeUuids::PRIMARY, $uuid->toString());
     }
 }

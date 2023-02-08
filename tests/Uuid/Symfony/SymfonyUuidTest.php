@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Termyn\Test\Uuid\Symfony;
 
 use PHPUnit\Framework\TestCase;
-use Termyn\Test\Uuid\FakeUuid;
+use Termyn\Test\Uuid\FakeUuids;
 use Termyn\Uuid\Symfony\SymfonyUuid;
 
 final class SymfonyUuidTest extends TestCase
@@ -19,14 +19,14 @@ final class SymfonyUuidTest extends TestCase
 
     public function testItCreatesValidUuidFromString(): void
     {
-        $uuid = SymfonyUuid::fromString(FakeUuid::PRIMARY);
+        $uuid = SymfonyUuid::fromString(FakeUuids::PRIMARY);
 
-        $this->assertSame(FakeUuid::PRIMARY, $uuid->toString());
+        $this->assertSame(FakeUuids::PRIMARY, $uuid->toString());
     }
 
     public function testItEqualsUuids(): void
     {
-        $firstUuid = SymfonyUuid::fromString(FakeUuid::PRIMARY);
+        $firstUuid = SymfonyUuid::fromString(FakeUuids::PRIMARY);
 
         $this->assertTrue(
             $firstUuid->equals($firstUuid)
@@ -35,8 +35,8 @@ final class SymfonyUuidTest extends TestCase
 
     public function testItNotEqualsUuids(): void
     {
-        $firstUuid = SymfonyUuid::fromString(FakeUuid::PRIMARY);
-        $secondUuid = SymfonyUuid::fromString(FakeUuid::SECONDARY);
+        $firstUuid = SymfonyUuid::fromString(FakeUuids::PRIMARY);
+        $secondUuid = SymfonyUuid::fromString(FakeUuids::SECONDARY);
 
         $this->assertFalse(
             $firstUuid->equals($secondUuid)
@@ -45,26 +45,26 @@ final class SymfonyUuidTest extends TestCase
 
     public function testItReturnsNameBasedUuid(): void
     {
-        $uuid = SymfonyUuid::fromString(FakeUuid::PRIMARY);
+        $uuid = SymfonyUuid::fromString(FakeUuids::PRIMARY);
 
-        $derivedUuid = $uuid->toNameBased(FakeUuid::SECONDARY);
+        $derivedUuid = $uuid->toNameBased(FakeUuids::SECONDARY);
 
-        $this->assertSame(FakeUuid::NAME_BASED, $derivedUuid->toString());
+        $this->assertSame(FakeUuids::NAME_BASED, $derivedUuid->toString());
     }
 
     public function testItReturnsValidString(): void
     {
-        $uuid = SymfonyUuid::fromString(FakeUuid::PRIMARY);
+        $uuid = SymfonyUuid::fromString(FakeUuids::PRIMARY);
 
-        $this->assertSame(FakeUuid::PRIMARY, $uuid->toString());
-        $this->assertSame(FakeUuid::PRIMARY, $uuid->__toString());
+        $this->assertSame(FakeUuids::PRIMARY, $uuid->toString());
+        $this->assertSame(FakeUuids::PRIMARY, $uuid->__toString());
     }
 
     public function testItCreatesValidUuidFromBinary(): void
     {
-        $uuid = SymfonyUuid::fromString(FakeUuid::PRIMARY);
+        $uuid = SymfonyUuid::fromString(FakeUuids::PRIMARY);
         $uuid = SymfonyUuid::fromBinary($uuid->toBinary());
 
-        $this->assertSame(FakeUuid::PRIMARY, $uuid->toString());
+        $this->assertSame(FakeUuids::PRIMARY, $uuid->toString());
     }
 }
