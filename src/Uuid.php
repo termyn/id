@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Termyn;
 
-abstract class Uuid implements Id, GlobalId, LocalId
+abstract class Uuid implements Id
 {
     public const NIL = '00000000-0000-0000-0000-000000000000';
 
@@ -24,7 +24,7 @@ abstract class Uuid implements Id, GlobalId, LocalId
         return strcmp((string) $this, (string) $that) === 0;
     }
 
-    public function associate(int|string $order): LocalId
+    public function next(int|string $order): Id
     {
         return $this->toNameBased((string) $order);
     }
