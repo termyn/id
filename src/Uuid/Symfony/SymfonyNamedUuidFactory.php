@@ -6,14 +6,12 @@ namespace Termyn\Uuid\Symfony;
 
 use Symfony\Component\Uid\Uuid as VendorUuid;
 use Termyn\Uuid;
-use Termyn\Uuid\UuidFactory;
+use Termyn\Uuid\UuidNamedFactory;
 
-final class SymfonyNamedUuidFactory implements UuidFactory
+final class SymfonyNamedUuidFactory implements UuidNamedFactory
 {
-    public function create(
-        Uuid $namespace,
-        string $name
-    ): Uuid {
+    public function create(Uuid $namespace, string $name): Uuid
+    {
         $namespace = VendorUuid::fromString($namespace->toString());
 
         return new SymfonyUuid(

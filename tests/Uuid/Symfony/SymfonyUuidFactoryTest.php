@@ -6,22 +6,17 @@ namespace Termyn\Id\Tests\Uuid\Symfony;
 
 use PHPUnit\Framework\TestCase;
 use Termyn\Test\Uuid\FakeUuids;
-use Termyn\Uuid\Symfony\SymfonyNamedUuidFactory;
 use Termyn\Uuid\Symfony\SymfonyUuid;
+use Termyn\Uuid\Symfony\SymfonyUuidFactory;
 
-final class SymfonyNamedUuidFactoryTest extends TestCase
+final class SymfonyUuidFactoryTest extends TestCase
 {
     public function testItCreatesValidUuid(): void
     {
-        $factory = new SymfonyNamedUuidFactory();
+        $factory = new SymfonyUuidFactory();
 
         $static = SymfonyUuid::fromString(FakeUuids::PRIMARY);
-        $static = $static->toNameBased(FakeUuids::SECONDARY);
-
-        $factored = $factory->create(
-            namespace: SymfonyUuid::fromString(FakeUuids::PRIMARY),
-            name: FakeUuids::SECONDARY,
-        );
+        $factored = $factory->create(FakeUuids::PRIMARY);
 
         $this->assertTrue(
             $static->equals($factored)

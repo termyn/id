@@ -8,5 +8,5 @@ use Termyn\Uuid;
 
 interface UuidFactory
 {
-    public function create(Uuid $namespace, string $name): Uuid;
+    public function create(string $uuid): Uuid;
 }

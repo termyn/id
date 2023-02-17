@@ -6,22 +6,17 @@ namespace Termyn\Test\Uuid\Ramsey;
 
 use PHPUnit\Framework\TestCase;
 use Termyn\Test\Uuid\FakeUuids;
-use Termyn\Uuid\Ramsey\RamseyNamedUuidFactory;
 use Termyn\Uuid\Ramsey\RamseyUuid;
+use Termyn\Uuid\Ramsey\RamseyUuidFactory;
 
-final class RamseyNamedUuidFactoryTest extends TestCase
+final class RamseyUuidFactoryTest extends TestCase
 {
     public function testItCreatesValidUuid(): void
     {
-        $factory = new RamseyNamedUuidFactory();
+        $factory = new RamseyUuidFactory();
 
         $static = RamseyUuid::fromString(FakeUuids::PRIMARY);
-        $static = $static->toNameBased(FakeUuids::SECONDARY);
-
-        $factored = $factory->create(
-            namespace: RamseyUuid::fromString(FakeUuids::PRIMARY),
-            name: FakeUuids::SECONDARY,
-        );
+        $factored = $factory->create(FakeUuids::PRIMARY);
 
         $this->assertTrue(
             $static->equals($factored)
