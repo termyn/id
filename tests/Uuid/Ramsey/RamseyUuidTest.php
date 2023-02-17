@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Id\Tests\Uuid\Ramsey;
+namespace Termyn\Tests\Uuid\Ramsey;
 
 use PHPUnit\Framework\TestCase;
 use Termyn\Test\Uuid\FakeUuids;
