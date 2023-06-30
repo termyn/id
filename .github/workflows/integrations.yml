@@ -1,15 +1,17 @@
 name: Integrations
 on:
   push:
-    branches:
-      - main
+    branches: ['main']
+
+permissions:
+  contents: read
 
 jobs:
   coveralls:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: [ '8.2' ]
+        php: ['8.2']
 
     name: Code Coverage
     steps:
