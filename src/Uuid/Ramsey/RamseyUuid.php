@@ -9,10 +9,10 @@ use Ramsey\Uuid\UuidInterface as VendorUuidInterface;
 use Termyn\Id;
 use Termyn\Uuid;
 
-final class RamseyUuid extends Uuid implements Id
+final readonly class RamseyUuid extends Uuid implements Id
 {
     public function __construct(
-        private readonly VendorUuidInterface $uuid,
+        private VendorUuidInterface $uuid,
     ) {
 
     }

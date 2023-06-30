@@ -6,7 +6,7 @@ namespace Termyn\Uuid;
 
 use Termyn\Uuid;
 
-final class RegexUuidValidator implements UuidValidator
+final readonly class RegexUuidValidator implements UuidValidator
 {
     public function validate(string $uuid): bool
     {

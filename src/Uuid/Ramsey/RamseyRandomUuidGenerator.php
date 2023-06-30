@@ -8,7 +8,7 @@ use Ramsey\Uuid\Uuid as VendorUuid;
 use Termyn\Uuid;
 use Termyn\Uuid\UuidGenerator;
 
-final class RamseyRandomUuidGenerator implements UuidGenerator
+final readonly class RamseyRandomUuidGenerator implements UuidGenerator
 {
     public function generate(): Uuid
     {

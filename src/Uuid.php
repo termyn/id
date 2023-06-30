@@ -6,7 +6,7 @@ namespace Termyn;
 
 use Stringable;
 
-abstract class Uuid implements Id
+abstract readonly class Uuid implements Id
 {
     public const NIL = '00000000-0000-0000-0000-000000000000';
 

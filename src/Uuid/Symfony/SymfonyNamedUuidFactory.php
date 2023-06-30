@@ -8,7 +8,7 @@ use Symfony\Component\Uid\Uuid as VendorUuid;
 use Termyn\Uuid;
 use Termyn\Uuid\UuidNamedFactory;
 
-final class SymfonyNamedUuidFactory implements UuidNamedFactory
+final readonly class SymfonyNamedUuidFactory implements UuidNamedFactory
 {
     public function create(Uuid $namespace, string $name): Uuid
     {

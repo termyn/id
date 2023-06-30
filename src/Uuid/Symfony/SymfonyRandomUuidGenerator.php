@@ -8,7 +8,7 @@ use Symfony\Component\Uid\Uuid as VendorUuid;
 use Termyn\Uuid;
 use Termyn\Uuid\UuidGenerator;
 
-final class SymfonyRandomUuidGenerator implements UuidGenerator
+final readonly class SymfonyRandomUuidGenerator implements UuidGenerator
 {
     public function generate(): Uuid
     {

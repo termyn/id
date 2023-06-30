@@ -8,10 +8,10 @@ use Symfony\Component\Uid\Uuid as VendorUuid;
 use Termyn\Id;
 use Termyn\Uuid;
 
-final class SymfonyUuid extends Uuid implements Id
+final readonly class SymfonyUuid extends Uuid implements Id
 {
     public function __construct(
-        private readonly VendorUuid $uuid
+        private VendorUuid $uuid
     ) {
     }
 
