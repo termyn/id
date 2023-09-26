@@ -57,6 +57,7 @@ final class RamseyUuidTest extends TestCase
         $uuid = RamseyUuid::fromString(FakeUuids::PRIMARY);
 
         $this->assertSame(FakeUuids::PRIMARY, $uuid->toString());
+        $this->assertSame(FakeUuids::PRIMARY, $uuid->jsonSerialize());
         $this->assertSame(FakeUuids::PRIMARY, $uuid->__toString());
     }
 

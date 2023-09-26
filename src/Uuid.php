@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Termyn;
 
+use JsonSerializable;
 use Stringable;
 
-abstract readonly class Uuid implements Id
+abstract readonly class Uuid implements Id, JsonSerializable
 {
     public const NIL = '00000000-0000-0000-0000-000000000000';
 
@@ -29,6 +30,11 @@ abstract readonly class Uuid implements Id
     public function next(int|string|Stringable $secret): Id
     {
         return $this->toNameBased((string) $secret);
+    }
+
+    public function jsonSerialize(): string
+    {
+        return $this->toString();
     }
 
     abstract public function toNameBased(string $name): self;

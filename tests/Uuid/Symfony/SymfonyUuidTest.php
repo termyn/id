@@ -57,6 +57,7 @@ final class SymfonyUuidTest extends TestCase
         $uuid = SymfonyUuid::fromString(FakeUuids::PRIMARY);
 
         $this->assertSame(FakeUuids::PRIMARY, $uuid->toString());
+        $this->assertSame(FakeUuids::PRIMARY, $uuid->jsonSerialize());
         $this->assertSame(FakeUuids::PRIMARY, $uuid->__toString());
     }
 
