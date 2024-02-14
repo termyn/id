@@ -22,6 +22,8 @@ abstract readonly class Uuid implements Id, JsonSerializable
 
     abstract public static function fromBinary(string $uuid): self;
 
+    abstract public static function isValid(string $uuid): bool;
+
     public function equals(Id $that): bool
     {
         return strcmp((string) $this, (string) $that) === 0;

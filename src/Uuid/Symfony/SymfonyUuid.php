@@ -34,6 +34,11 @@ final readonly class SymfonyUuid extends Uuid implements Id
         );
     }
 
+    public static function isValid(string $uuid): bool
+    {
+        return VendorUuid::isValid($uuid);
+    }
+
     public function toNameBased(string $name): self
     {
         return new self(
